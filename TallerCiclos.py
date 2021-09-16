@@ -51,3 +51,42 @@ def nCarros():
     print(f"Entran {roja} automóviles con calcomanía roja")
     print(f"Entran {verde} automóviles con calcomanía verde")
     print(f"Entran {azul} automóviles con calcomanía azul")
+
+# Un Zoólogo pretende determinar el porcentaje de animales que hay en las
+# siguiente categorias de edades: 0 a 1 año, de mas de 1 año y menos de 3 y
+# de 3 o mas años. El zoológico todavía no está seguro del animal que va
+# estudiar. Si se decide por elefantes solo tomará una muestra de 20 de ellos;
+# si se decide por jirafas, tomara 15 de muestras y si son chompancés tomará
+# 40.
+
+
+def porcentajeAnimales():
+    categoria1 = 0
+    categoria2 = 0
+    categoria3 = 0
+
+    animal = input("Escoja un animal (elefantes - jirafas - chimpancés): ")
+    if (animal == "elefantes" or animal == "jirafas" or animal == "chimpancés" or animal == "chimpances"):
+        if animal == "elefantes":
+            muestra = 20
+        elif animal == "jirafas":
+            muestra = 15
+        elif animal == "chimpancés" or animal == "chimpances":
+            muestra = 40
+
+        for i in range(muestra):
+            edad = int(input("Ingrese la edad: "))
+
+            if edad >= 0 and edad <= 1:
+                categoria1 = categoria1 + 1
+            elif edad > 1 and edad < 3:
+                categoria2 = categoria2 + 1
+            elif edad > 3:
+                categoria3 = categoria3 + 1
+
+        print(f"El porcentaje de edad del animal {animal} es: ")
+        print(f"De 0 a 1 año: {(categoria1/muestra)*100}% ")
+        print(f"De más de 1 y menos de 3 años: {(categoria2/muestra)*100}% ")
+        print(f"De más de 3 años: {(categoria3/muestra)*100}% ")
+    else:
+        print("Escoja algún animal de los detallados")
