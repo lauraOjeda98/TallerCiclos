@@ -90,3 +90,24 @@ def porcentajeAnimales():
         print(f"De más de 3 años: {(categoria3/muestra)*100}% ")
     else:
         print("Escoja algún animal de los detallados")
+
+# Una empresa se requiere calcular el salario semanal de cada uno de los n
+# obreros que laboran en ella. El salario se obtiene de la siguiente forma:
+# a. Si el obrero trabaja 40 horas o menos se le paga $20 por hora
+# b. Si trabaja mas de 40 horas se le paga $20 por cada una de las primeras
+# 40 horas y $25 por cada hora extra.
+
+
+def salarioObreros():
+    n = int(input("Ingresa el número de obreros: "))
+    cont = 1
+
+    while cont <= n:
+        horas = float(input("Ingrese las horas trabajadas en la semana: "))
+        if horas <= 40:
+            salario = horas*20
+        else:
+            extra = horas - 40
+            salario = 40 * 20 + (extra*25)
+        print(f"El salario del obrero {cont} es de: ${salario}")
+        cont += 1
