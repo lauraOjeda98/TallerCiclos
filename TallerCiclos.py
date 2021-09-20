@@ -136,9 +136,9 @@ def promedioEdad():
     promH = edadH / hombre
     grupo = edadM + edadH
     promGrupo = grupo / n
-    print(f"EL promedio de edades de mujeres es: {promM} años")
-    print(f"EL promedio de edades de hombres es: {promH} años")
-    print(f"EL promedio de edades del grupo es: {promGrupo} años")
+    print(f"El promedio de edades de mujeres es: {promM} años")
+    print(f"El promedio de edades de hombres es: {promH} años")
+    print(f"El promedio de edades del grupo es: {promGrupo} años")
 
 # 5. Encontrar el menor valor de un conjunto de n números dados
 
@@ -202,3 +202,59 @@ def calcularCompra():
         if resp == "si":
             compra = False
     print(f"El total a pagar es de: ${total:,}")
+
+# 8. Un teatro otorga descuentos según la edad del cliente, determinar la
+# cantidad del dinero que el teatro deja de percibir por cada ua de las
+# categorias. Tomar en cuenta que los niños menores de 5 años no pueden
+# entrar al teatro y que existe un precio único en los asientos. Los descuentos
+# se hacen tomando en cuenta el siguiente cuadro:
+# Edad % - Descuento
+# 5 – 14 -  35%
+# 15-19 -   25%
+# 20 – 45 - 10%
+# 46 – 65 - 25%
+# 66 en Adelante - 35%
+
+
+def calcularDescuentos():
+    cat1 = 0
+    cat2 = 0
+    cat3 = 0
+    cat4 = 0
+    cat5 = 0
+    precio = float(input("Ingrese el precio del boleto: $"))
+    abierto = True
+    total = 0
+
+    while abierto:
+        edad = int(input("Ingrese edad: "))
+        if edad < 5:
+            print("No se permite la entrada de menores a 5 años")
+        elif edad <= 14:
+            descuento = precio * 0.35
+            cat1 += descuento
+        elif edad <= 19:
+            descuento = precio * 0.25
+            cat2 += descuento
+        elif edad <= 45:
+            descuento = precio * 0.1
+            cat3 += descuento
+        elif edad <= 65:
+            descuento = precio * 0.25
+            cat4 += descuento
+        else:
+            descuento = precio * 0.35
+            cat5 += descuento
+        print(f"El descuento es de: ${descuento:,}")
+        total += descuento
+
+        resp = input("¿Desea cerrar? (si o no): ")
+        if resp == "si":
+            abierto = False
+
+    print(f"Por la categoria 1, el descuento aplicado total es de: ${cat1:,}")
+    print(f"Por la categoria 2, el descuento aplicado total es de: ${cat2:,}")
+    print(f"Por la categoria 3, el descuento aplicado total es de: ${cat3:,}")
+    print(f"Por la categoria 4, el descuento aplicado total es de: ${cat4:,}")
+    print(f"Por la categoria 5, el descuento aplicado total es de: ${cat5:,}")
+    print(f"El total de descuentos: ${total:,}")
