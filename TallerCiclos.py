@@ -5,7 +5,7 @@ Created on Wed Sep 15 19:44:45 2021
 @author: laura
 """
 
-# El departamento de Seguridad de Transito de Barranquilla, desea saber de
+# 1. El departamento de Seguridad de Transito de Barranquilla, desea saber de
 # los n autos que entrar a la ciudad, cuantos entran con calcomanía de cada
 # color. Conociendo el último digito de la placa de cada automóvil se puede
 # determinar el color de la calcomanía utilizando la siguiente relación:
@@ -52,7 +52,7 @@ def nCarros():
     print(f"Entran {verde} automóviles con calcomanía verde")
     print(f"Entran {azul} automóviles con calcomanía azul")
 
-# Un Zoólogo pretende determinar el porcentaje de animales que hay en las
+# 2. Un Zoólogo pretende determinar el porcentaje de animales que hay en las
 # siguiente categorias de edades: 0 a 1 año, de mas de 1 año y menos de 3 y
 # de 3 o mas años. El zoológico todavía no está seguro del animal que va
 # estudiar. Si se decide por elefantes solo tomará una muestra de 20 de ellos;
@@ -91,7 +91,7 @@ def porcentajeAnimales():
     else:
         print("Escoja algún animal de los detallados")
 
-# Una empresa se requiere calcular el salario semanal de cada uno de los n
+# 3. Una empresa se requiere calcular el salario semanal de cada uno de los n
 # obreros que laboran en ella. El salario se obtiene de la siguiente forma:
 # a. Si el obrero trabaja 40 horas o menos se le paga $20 por hora
 # b. Si trabaja mas de 40 horas se le paga $20 por cada una de las primeras
@@ -111,3 +111,31 @@ def salarioObreros():
             salario = 40 * 20 + (extra*25)
         print(f"El salario del obrero {cont} es de: ${salario}")
         cont += 1
+
+# 4. Calcular el promedio de edades de hombres, mujeres y de todo un grupo
+# de alumnos.
+
+
+def promedioEdad():
+    n = int(input("Ingrese número de alumnos: "))
+    edadM = 0
+    edadH = 0
+    mujer = 0
+    hombre = 0
+    grupo = 0
+
+    for i in range(n):
+        genero = input("Ingrese el género del alumno (mujer - hombre): ")
+        if genero == "mujer":
+            edadM += int(input("Ingrese edad de la mujer: "))
+            mujer += 1
+        elif genero == "hombre":
+            edadH += int(input("Ingrese edad del hombre: "))
+            hombre += 1
+    promM = edadM / mujer
+    promH = edadH / hombre
+    grupo = edadM + edadH
+    promGrupo = grupo / n
+    print(f"EL promedio de edades de mujeres es: {promM} años")
+    print(f"EL promedio de edades de hombres es: {promH} años")
+    print(f"EL promedio de edades del grupo es: {promGrupo} años")
