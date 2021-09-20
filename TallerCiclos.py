@@ -287,3 +287,43 @@ def calcularComision():
         print(f"El vendedor {i+1} vendió: ${venta:,}")
         print(f"La comisión es de: ${comision-venta:,}")
         print(f"El vendedor {i+1} recibe en total con comisión: ${comision:,}")
+
+# 10. La empresa Encuestas S.A desea crear una función que les permita
+# conocer de los 50.000 votos obtenidos por 3 candidatos, cual de estos fue
+# el ganador o indicar si hubo empate y la cantidad de votos obtenidos.
+
+
+def calcularVotos():
+    candidato1 = 0
+    candidato2 = 0
+    candidato3 = 0
+
+    for i in range(10):
+        print("1 - candidato 1,  2 - candidato 2,  3 - candidato 3")
+        voto = int(input(f"Ingrese a qué candidato fue el voto de {i+1}: "))
+
+        if voto == 1:
+            candidato1 += 1
+        elif voto == 2:
+            candidato2 += 1
+        elif voto == 3:
+            candidato3 += 1
+
+    if candidato1 > candidato2 and candidato1 > candidato3:
+        print("GANÓ el candidato 1")
+        print(f"Votos candidato 1: {candidato1}")
+    elif candidato2 > candidato1 and candidato2 > candidato3:
+        print("GANÓ el candidato 2")
+        print(f"Votos candidato 2: {candidato2}")
+    elif candidato3 > candidato1 and candidato3 > candidato1:
+        print("GANÓ el candidato 3")
+        print(f"Votos candidato 3: {candidato3}")
+    elif candidato1 == candidato2:
+        print("Hay empate entre candidato 1 y 2")
+        print(f"Votos candidato 1: {candidato1} - candidato 2: {candidato2}")
+    elif candidato1 == candidato3:
+        print("Hay empate entre candidato 1 y 3")
+        print(f"Votos candidato 1: {candidato1} - candidato 3: {candidato3}")
+    elif candidato2 == candidato3:
+        print("Hay empate entre candidato 2 y 3")
+        print(f"Votos candidato 2: {candidato2} - candidato 3: {candidato3}")
