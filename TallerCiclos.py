@@ -150,3 +150,31 @@ def valorMenor():
         num.append(float(input(f"Ingrese el número {i+1}: ")))
     menor = min(num)
     print(f"El número menor de los números ingresados es: {menor}")
+
+# 6. Cinco miembros de un club contra la obesidad desean saber cuanto han
+# bajado o subido de peso desde la última vez que se reunieron. Para esto se
+# debe realizar un ritual de pesaje en donde cada uno se pesa en diez
+# básculas distintas para así tener el pormedio mas exacto de su peso. Si
+# existe diferencia positiva entre este promedio de peso y el peso de la última
+# vez que se reunieron, significa que subieron de peso. Pero si la diferencia
+# es negativa, significa que bajaron. Lo que el problema requere es que por
+# cada persona se imprima un letrero que diga: “SUBIÓ” o “BAJÓ” y la
+# cantidad de kilos que subió o bajó de peso
+
+
+def peso():
+    for i in range(5):
+        peso = float(input(f"Ingrese el peso previo de la persona {i+1}: "))
+        pActual = 0
+        for j in range(10):
+            pActual += float(input(f"Ingrese peso actual de la báscula #{j+1}: "))
+
+        prom_peso = pActual / 10
+        if prom_peso == peso:
+            print(f"La persona {i+1} se MANTIENE en el peso con {peso} kg")
+        elif prom_peso > peso:
+            print(f"Tiene un promedio de: {prom_peso} kg")
+            print(f"La persona {i+1} SUBIÓ de peso con {prom_peso-peso} kg")
+        else:
+            print(f"Tiene un promedio de: {prom_peso} kg")
+            print(f"La persona {i+1} BAJÓ de peso con {peso-prom_peso} kg")
