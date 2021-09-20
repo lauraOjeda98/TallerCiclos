@@ -258,3 +258,32 @@ def calcularDescuentos():
     print(f"Por la categoria 4, el descuento aplicado total es de: ${cat4:,}")
     print(f"Por la categoria 5, el descuento aplicado total es de: ${cat5:,}")
     print(f"El total de descuentos: ${total:,}")
+
+# 9. Kia Autos premia anualmente a sus mejores vendedores de acuerdo a la
+# siguiente tabla:
+# Valor vendido - Comisión
+# Menor o igual que 20 Millones - 10%
+# Mayor de 20 Millones y menor de 40 Millones - 15%
+# Mayor o igual de 40 Millones y menor de 80 Millones - 20%
+# Mayor o igual de 80 millones y menor de 160 Millones - 25%
+# De 160 Millones en adelante - 30%
+# Realice un método que diga cuanto vendió y la comisión de los 100 vendedores
+# que tiene la empresa.
+
+
+def calcularComision():
+    for i in range(100):
+        venta = float(input(f"Ingrese el valor vendido por {i+1} empleado: "))
+        if venta <= 20000000:
+            comision = venta * 1.1
+        elif venta > 20000000 and venta < 40000000:
+            comision = venta * 1.15
+        elif venta >= 40000000 and venta < 80000000:
+            comision = venta * 1.2
+        elif venta >= 80000000 and venta < 160000000:
+            comision = venta * 1.25
+        else:
+            comision = venta * 1.3
+        print(f"El vendedor {i+1} vendió: ${venta:,}")
+        print(f"La comisión es de: ${comision-venta:,}")
+        print(f"El vendedor {i+1} recibe en total con comisión: ${comision:,}")
