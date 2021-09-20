@@ -139,3 +139,14 @@ def promedioEdad():
     print(f"EL promedio de edades de mujeres es: {promM} años")
     print(f"EL promedio de edades de hombres es: {promH} años")
     print(f"EL promedio de edades del grupo es: {promGrupo} años")
+
+# 5. Encontrar el menor valor de un conjunto de n números dados
+
+
+def valorMenor():
+    n = int(input("Ingrese cantidad de números: "))
+    num = []
+    for i in range(n):
+        num.append(float(input(f"Ingrese el número {i+1}: ")))
+    menor = min(num)
+    print(f"El número menor de los números ingresados es: {menor}")
