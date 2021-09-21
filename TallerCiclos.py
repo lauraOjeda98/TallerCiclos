@@ -298,7 +298,7 @@ def calcularVotos():
     candidato2 = 0
     candidato3 = 0
 
-    for i in range(10):
+    for i in range(50000):
         print("1 - candidato 1,  2 - candidato 2,  3 - candidato 3")
         voto = int(input(f"Ingrese a qué candidato fue el voto de {i+1}: "))
 
